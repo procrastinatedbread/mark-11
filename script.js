@@ -14,10 +14,15 @@ function compareValues(sum, luckyNumber) {
 function checkBirthdayIsLucky() {
   const dob = dateOfBirth.value;
   const sum = calculateSum(dob);
-  if (sum && dob) {
-    compareValues(sum, luckyNumber.value);
+  if (luckyNumber.value > 0) {
+    if (sum && dob) {
+      compareValues(sum, luckyNumber.value);
+    } else {
+      outputBox.innerText = "Please enter both the fields";
+    }
   } else {
-    outputBox.innerText = "Please enter both the fields";
+    outputBox.innerText =
+      "Please enter your number as a positive and greater than zero";
   }
 }
 
